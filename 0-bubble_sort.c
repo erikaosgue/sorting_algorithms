@@ -14,14 +14,8 @@ void bubble_sort(int *array, size_t size)
 	int trigger = 0;
 	int sorting = 1;
 
-	if (array == NULL || size < 1)
+	if (array == NULL || size <= 1)
 		return;
-
-	if (size == 1)
-	{
-		print_array(array, size);
-		return;
-	}
 
 	while (sorting)
 	{
