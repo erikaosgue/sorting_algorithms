@@ -1,7 +1,5 @@
 #include "sort.h"
 
-
-
 /**
  * quick_sort - sorts an array of integers in ascending
  * order using the Quick sort algorithm
@@ -9,9 +7,10 @@
  * @array: Array of integers to sort
  * @size: The size of the array
  */
-
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size <= 1)
+		return;
 	recursion(array, size, array, size);
 }
 
@@ -24,15 +23,13 @@ void quick_sort(int *array, size_t size)
  * @full_array: The complete array
  * @full_size: The size of the full_array
  */
-
 void recursion(int *array, size_t size, int *full_array, size_t full_size)
 {
-
 	int *pivot = NULL;
 	size_t j = 0;
 	int i = -1, value = 0;
 
-	if (size == 0 || array == NULL)
+	if (array == NULL || size <= 1)
 		return;
 
 	pivot = &array[size - 1];
