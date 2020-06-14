@@ -9,7 +9,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *current = NULL, *checker = NULL, *sig = NULL;
 
-	if (*list == NULL)
+	if (list == NULL || *list == NULL)
 		return;
 
 	sig  = current = *list;
@@ -34,6 +34,8 @@ void insertion_sort_list(listint_t **list)
 				checker->prev = current;
 				print_list(*list);
 			}
+			else if (current != checker)
+				break;
 			checker = checker->prev;
 		}
 		current = sig;
