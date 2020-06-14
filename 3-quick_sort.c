@@ -40,10 +40,10 @@ void recursion(int *array, size_t size, int *full_array, size_t full_size)
 			i++;
 			if (&array[i] != &array[j])
 			{
-				print_array(full_array, full_size);
 				value = array[i];
 				array[i] = array[j];
 				array[j] = value;
+				print_array(full_array, full_size);
 			}
 		}
 	}
