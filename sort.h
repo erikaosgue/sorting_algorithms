@@ -2,6 +2,7 @@
 #define SORT_H
 
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -26,4 +27,5 @@ void recursion(int *array, size_t size, int *full_array, size_t full_size);
 void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void swaps(listint_t *current, listint_t *forward, listint_t **list);
+void counting_sort(int *array, size_t size);
 #endif /* SORT_H */
