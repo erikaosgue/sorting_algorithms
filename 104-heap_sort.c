@@ -13,6 +13,9 @@ void heap_sort(int *array, size_t size)
 	int value, i;
 	int parents, child_max;
 
+	if (array == NULL || size < 2)
+		return;
+
 	tail = size - 1;
 	while (tail > 0)
 	{
