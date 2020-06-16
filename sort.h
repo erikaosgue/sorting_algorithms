@@ -29,4 +29,7 @@ void cocktail_sort_list(listint_t **list);
 void swaps(listint_t *current, listint_t *forward, listint_t **list);
 void counting_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+int *merge_recursion(int *array, size_t size, int *merge);
+int *merge_func(int *array_1, int *array_2, size_t size_1, size_t size_2, int *merge);
 #endif /* SORT_H */
