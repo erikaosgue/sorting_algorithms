@@ -69,12 +69,16 @@ void radix_sort(int *array, size_t size)
 	count = max_number(array, size);
 	size_num = num_dig = num_digits(count);
 	arr_sum = malloc(sizeof(int) * 10);
-	arr_sorting = malloc(sizeof(int) * 10);
+	arr_sorting = malloc(sizeof(int) * size);
 	while (num_dig)
 	{ count = 0;
 		/* initialize both arrays in 0 */
-		for (i = 0; i < 10; i++)
-			arr_sum[i] = 0, arr_sorting[i] = 0;
+		for (i = 0; i < size; i++)
+		{
+			if (i < 10)
+				arr_sum[i] = 0;
+			arr_sorting[i] = 0;
+		}
 		/* add 1 for each coincidence of a number in the idx */
 		for (i = 0; i < size; i++)
 		{ num_idx = which_number(array[i], num_dig, size_num);
@@ -94,8 +98,6 @@ void radix_sort(int *array, size_t size)
 		/* put back the array sorted in the original */
 		for (i = 0; i < size; i++)
 			array[i] = arr_sorting[i];
-		print_array(array, size);
-		num_dig--;
-	} free(arr_sum);
-	free(arr_sorting);
+		print_array(array, size), num_dig--;
+	} free(arr_sum), free(arr_sorting);
 }
