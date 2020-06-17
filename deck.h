@@ -13,10 +13,10 @@
  */
 typedef enum kind_e
 {
-    SPADE = 0,
-    HEART,
-    CLUB,
-    DIAMOND
+	SPADE = 0,
+	HEART,
+	CLUB,
+	DIAMOND
 } kind_t;
 
 /**
@@ -28,8 +28,8 @@ typedef enum kind_e
  */
 typedef struct card_s
 {
-    const char *value;
-    const kind_t kind;
+	const char *value;
+	const kind_t kind;
 } card_t;
 
 /**
@@ -41,14 +41,14 @@ typedef struct card_s
  */
 typedef struct deck_node_s
 {
-    const card_t *card;
-    struct deck_node_s *prev;
-    struct deck_node_s *next;
+	const card_t *card;
+	struct deck_node_s *prev;
+	struct deck_node_s *next;
 } deck_node_t;
 
 void sort_deck(deck_node_t **deck);
 void swaps(deck_node_t *current, deck_node_t *forward, deck_node_t **deck);
-void cocktail_sort_list(deck_node_t **deck);
+void cocktail_sort_deck(deck_node_t **deck, int mode);
 void print_deck(const deck_node_t *deck);
 deck_node_t *init_deck(const card_t cards[]);
 void divide(deck_node_t **deck,
@@ -56,4 +56,5 @@ deck_node_t **head_S, deck_node_t **head_H,
 deck_node_t **head_C, deck_node_t **head_D,
 deck_node_t **tail_S, deck_node_t **tail_H,
 deck_node_t **tail_C, deck_node_t **tail_D);
+void strange_swap_and_update_tail(deck_node_t **head, deck_node_t **tail);
 #endif /* DECK_H */
