@@ -35,7 +35,7 @@ void recursion(int *array, size_t size, int *full_array, size_t full_size)
 	pivot = &array[size - 1];
 	for (j = 0; j < size - 1; j++)
 	{
-		if (array[j] < *pivot)
+		if (array[j] <= *pivot)
 		{
 			i++;
 			if (&array[i] != &array[j])

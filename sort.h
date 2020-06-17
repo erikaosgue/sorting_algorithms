@@ -33,4 +33,8 @@ void merge_sort(int *array, size_t size);
 int *merge_recursion(int *array, size_t size, int *merge);
 int *merge_func(int *array_1, int *array_2, size_t size_1,
 size_t size_2, int *merge);
+int which_number(int number, int digit, int size);
+int num_digits(int number);
+void radix_sort(int *array, size_t size);
+int max_number(int *array, int size);
 #endif /* SORT_H */
