@@ -37,4 +37,6 @@ int which_number(int number, int digit, int size);
 int num_digits(int number);
 void radix_sort(int *array, size_t size);
 int max_number(int *array, int size);
+void recursion_hoare(int *array, int size, int *full_array, int full_size);
+void quick_sort_hoare(int *array, size_t size);
 #endif /* SORT_H */
